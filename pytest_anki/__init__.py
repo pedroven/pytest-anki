@@ -35,9 +35,14 @@ A simple pytest plugin for testing Anki add-ons
 
 __all__ = ["AnkiStateUpdate", "AnkiWebViewType", "AnkiSessionError", "AnkiSession"]
 
-from ._anki import AnkiStateUpdate, AnkiWebViewType  # noqa: F401
-from ._errors import AnkiSessionError  # noqa: F401
-from ._session import AnkiSession  # noqa: F401
+from anki.collection import _Collection
+from anki._backend import RustBackend
+from aqt import AnkiApp
+from aqt.main import AnkiQt
+from aqt.mediasync import MediaSyncer
+from aqt.profiles import ProfileManager as ProfileManagerType
+from aqt.qt import QApplication, QMainWindow
+from aqt.taskman import TaskManager
 
 __version__ = "1.0.0-beta.3"
 __author__ = "Aristotelis P. (Glutanimate), Michal Krassowski"
